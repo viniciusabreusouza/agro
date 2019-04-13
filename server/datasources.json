@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "cluster0-rpake.mongodb.net",
+    "port": 27017,
+    "url": "mongodb+srv://agroUser:agro123@cluster0-rpake.mongodb.net/agro_db?retryWrites=true",
+    "database": "agro_db",
+    "password": "agro123",
+    "name": "db",
+    "user": "agroUser",
+    "connector": "mongodb"
+  }
+}
