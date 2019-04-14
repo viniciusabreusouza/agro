@@ -1,3 +1,5 @@
+import { HomeGuard } from './services/auth/home.guard';
+import { LocalStorageService } from './services/local-storage.service';
 import { LoginService } from './services/login/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,12 +10,18 @@ import { LoginComponent } from './user/login/login.component';
 import { RegistrarComponent } from './user/registrar/registrar.component';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    HomeComponent,
+    AppLayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ LoginService],
+  providers: [ LoginService, LocalStorageService, HomeGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

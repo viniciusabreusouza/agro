@@ -1,8 +1,10 @@
+import { LocalStorageService } from './../../services/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginRequest } from 'src/app/models/login/login-request.model';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/services/login/login.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
+    private localSotrageService: LocalStorageService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -29,7 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
     this.submitted = true;
 
     if (this.loginForm.invalid) {
@@ -49,9 +52,13 @@ export class LoginComponent implements OnInit {
     this.obterAutenticacao = this.loginService.autenticacao(loginRequest).subscribe(
       (data: any) => {
         console.log('Login');
+        if (data != null && data.id != null) {
+          this.localSotrageService.setObject('userToken', data);
+          this.router.navigate(['home']);
+        }
       },
       (error) => {
-
+        console.log('erro' + error)
       });
   }
 

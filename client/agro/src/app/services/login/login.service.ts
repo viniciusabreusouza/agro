@@ -14,7 +14,6 @@ export class LoginService {
   constructor(protected http: HttpClient) { }
 
   autenticacao(request: LoginRequest): Observable<any> {
-
     return this.http.post<any>(urlLogin, request);
   }
 }
