@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { HeaderComponent } from './header/header.component';
     RegistrarComponent,
     HomeComponent,
     AppLayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [ LoginService, LocalStorageService, HomeGuard],
   bootstrap: [AppComponent]

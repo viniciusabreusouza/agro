@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.dataLogin  = {
-      Email: this.loginForm.value.usuario,
-      Password: this.loginForm.value.senha
+      email: this.loginForm.value.usuario,
+      password: this.loginForm.value.senha
     };
 
     this.autenticar(this.dataLogin);
