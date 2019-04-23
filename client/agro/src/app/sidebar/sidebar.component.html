@@ -1,0 +1,41 @@
+<nav id="sidebar">
+  <div class="sidebar-border">
+    <div class="sidebar-header">
+      <div class="row">
+        <div class="col-12 sidebar-title">
+          Agro App
+        </div>
+        <!-- <div class="col-12 sidebar-logo"> -->
+          <!-- <div class="border-box"></div> -->
+          <!-- <img class="img-logo" src="assets/img/logos/logo-bs2-white.svg" alt="logo-app"> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <ul id="menusNavBar" class="list-unstyled components navbar-nav sidebar-menu">
+    <li >
+      <a class="nav-link" title="HOME" [routerLink]="['/home']">
+        <fa name="home" size="2x"></fa>
+        <span class="menu-item">
+          Home
+        </span>
+      </a>
+    </li>
+    <li >
+      <a class="nav-link" title="Produtos" [routerLink]="['/produtos']">
+        <fa name="apple" size="2x"></fa>
+        <span class="menu-item">
+          Produtos
+        </span>
+      </a>
+    </li>
+    <li >
+      <a class="nav-link" title="Solicitações de Serviço" [routerLink]="['/solicitacoes']">
+        <fa name="archive" size="2x"></fa>
+        <span class="menu-item">
+          Solicitações de Serviço
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
