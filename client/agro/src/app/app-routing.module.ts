@@ -1,3 +1,4 @@
+import { AdicionarProdutoComponent } from './produtos/adicionar-produto/adicionar-produto.component';
 import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full', canActivate: [HomeGuard] },
       { path: 'home', component: HomeComponent, canActivate: [HomeGuard] },
       { path: 'produtos', component: ProdutosComponent, canActivate: [HomeGuard] },
+      { path: 'produtos/adicionar-produto', component: AdicionarProdutoComponent, canActivate: [HomeGuard] },
       { path: 'produtos/:id', component: DetalhesProdutoComponent, canActivate: [HomeGuard] },
     ]
   }

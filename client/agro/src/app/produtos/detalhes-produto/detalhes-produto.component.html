@@ -1,3 +1,27 @@
-<p>
-  detalhes-produto works!
-</p>
+<div class="container">
+  <h2>Produtos</h2>
+  <div class="produtos">
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" formControlName="nome" id="nome"  [(ngModel)]="modelProduto.Nome" value="{{ modelProduto.Nome }}">
+        </div>
+        <div class="col">
+          <label for="descricao">Descrição</label>
+          <input type="text" class="form-control"  formControlName="descricao" id="descricao" [(ngModel)]="modelProduto.descricao"  value="{{ modelProduto.descricao }}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="valor">Valor</label>
+          <input type="text" class="form-control" id="valor"
+              (keyup)="maskValor()" formControlName="valor" [(ngModel)]="modelProduto.preco" value="{{ modelProduto.preco | currency:'BRL':'symbol':'1.2-2' }}">
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success btn-salvar">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

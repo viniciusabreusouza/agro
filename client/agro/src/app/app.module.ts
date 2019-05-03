@@ -18,6 +18,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
+import { AdicionarProdutoComponent } from './produtos/adicionar-produto/adicionar-produto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-p
     HeaderComponent,
     SidebarComponent,
     ProdutosComponent,
-    DetalhesProdutoComponent
+    DetalhesProdutoComponent,
+    AdicionarProdutoComponent
   ],
   imports: [
     BrowserModule,
