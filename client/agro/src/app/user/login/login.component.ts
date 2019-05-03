@@ -1,5 +1,5 @@
 import { LocalStorageService } from './../../services/local-storage.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginRequest } from 'src/app/models/login/login-request.model';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   submitted: boolean;
   dataLogin: LoginRequest;
@@ -60,6 +60,12 @@ export class LoginComponent implements OnInit {
       (error) => {
         console.log('erro' + error)
       });
+  }
+
+  ngOnDestroy(): void {
+    if (this.obterAutenticacao){
+      this.obterAutenticacao.unsubscribe();
+    }
   }
 
 }
