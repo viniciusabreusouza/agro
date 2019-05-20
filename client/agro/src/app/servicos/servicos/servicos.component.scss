@@ -1,0 +1,15 @@
+@import '../../sass/variables';
+
+.servicos{
+  padding-top: 20px;
+}
+.li-produtos {
+  align-items: center;
+}
+#header-grid-servicos{
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: $fonteTextoGrande;
+  color: $colorVerdeMusgo;
+}
