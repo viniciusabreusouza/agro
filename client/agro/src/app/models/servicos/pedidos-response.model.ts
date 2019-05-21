@@ -5,4 +5,5 @@ export interface PedidosResponse {
  quantidade: number;
  status: string;
  produtoId: string;
+ produtoName: string;
 }

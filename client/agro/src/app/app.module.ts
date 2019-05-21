@@ -20,6 +20,7 @@ import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
 import { AdicionarProdutoComponent } from './produtos/adicionar-produto/adicionar-produto.component';
 import { ServicosComponent } from './servicos/servicos/servicos.component';
+import { DetalheServicosComponent } from './servicos/detalhe-servicos/detalhe-servicos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ServicosComponent } from './servicos/servicos/servicos.component';
     ProdutosComponent,
     DetalhesProdutoComponent,
     AdicionarProdutoComponent,
-    ServicosComponent
+    ServicosComponent,
+    DetalheServicosComponent
   ],
   imports: [
     BrowserModule,

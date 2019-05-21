@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Solicitações de Serviço</h2>
+  <div class="servicos">
+    <form [formGroup]="editServicoForm" (ngSubmit)="onSubmit()">
+      <div class="row mt-2">
+        <div class="col">
+          <label for="solicitante">Solicitante</label>
+          <input type="text" class="form-control" id="solicitante" formControlName="solicitante" [(ngModel)]="modelSolicitacaoServico.solicitante"  value="{{ modelSolicitacaoServico.solicitante }}" readonly>
+        </div>
+        <div class="col">
+          <label for="descricao">Descrição</label>
+          <input type="text" class="form-control"  id="descricao"  formControlName="descricao" [(ngModel)]="modelSolicitacaoServico.descricao" value="{{ modelSolicitacaoServico.descricao }}" readonly>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">
+          <label for="quantidade">Quantidade</label>
+          <input type="text" class="form-control" id="quantidade" formControlName="quantidade" [(ngModel)]="modelSolicitacaoServico.quantidade"  value="{{ modelSolicitacaoServico.quantidade }}" readonly>
+        </div>
+        <div class="col">
+          <label for="produto">Produto</label>
+          <input type="text" class="form-control" id="produto" formControlName="produto" [(ngModel)]="modelSolicitacaoServico.produtoName"  value="{{ modelSolicitacaoServico.produtoName }}" readonly>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">
+          <label for="status">Status</label>
+          <input type="text" class="form-control" id="status" formControlName="status" [(ngModel)]="modelSolicitacaoServico.status"  value="{{ modelSolicitacaoServico.status }}">
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success btn-salvar">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

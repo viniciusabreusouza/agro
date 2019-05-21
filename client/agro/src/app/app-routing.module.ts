@@ -9,6 +9,7 @@ import { HomeGuard } from './services/auth/home.guard';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { ServicosComponent } from './servicos/servicos/servicos.component';
+import { DetalheServicosComponent } from './servicos/detalhe-servicos/detalhe-servicos.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'produtos/adicionar-produto', component: AdicionarProdutoComponent, canActivate: [HomeGuard] },
       { path: 'produtos/:id', component: DetalhesProdutoComponent, canActivate: [HomeGuard] },
       { path: 'servicos', component: ServicosComponent, canActivate: [HomeGuard] },
+      { path: 'servicos/:id', component: DetalheServicosComponent, canActivate: [HomeGuard] },
     ]
   }
 ];

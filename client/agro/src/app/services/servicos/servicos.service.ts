@@ -25,6 +25,6 @@ export class ServicosService {
   }
 
   atualizarPedido(idPedido: string , request: any): Observable<PedidosResponse> {
-    return this.http.put<PedidosResponse>(`/api/Pedidos/${idPedido}`, request);
+    return this.http.put<PedidosResponse>(`${urlApi}/Pedidos/${idPedido}`, request);
   }
 }
