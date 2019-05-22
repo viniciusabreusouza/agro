@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Solicitações de Serviço</h2>
+   <div class="servicos">
+    <div class="row" id="header-grid-servicos">
+        <div class="header text-left col-2">Solicitante</div>
+        <div class="header text-left col-4">Descrição</div>
+        <div class="header text-left col-2">Quantidade</div>
+        <div class="header text-left col-2">Status</div>
+    </div>
+    <div class="row mb-3">
+        <ul class="col-12">
+          <li class="row li-servicos" *ngFor="let item of modelServicos">
+            <div class="text-left col-2 align-middle">
+             <span>{{ item.solicitante }}</span>
+            </div>
+            <div class="text-left col-4 align-middle">
+              <span>{{ item.descricao }}</span>
+            </div>
+            <div class="text-left col-2 align-middle">
+              <span>{{ item.quantidade }}</span>
+            </div>
+            <div class="text-left col-2 align-middle">
+              {{ item.status }}
+            </div>
+            <div class="text-left col-2 align-middle">
+              <a class="nav-link active" [routerLink]="['servicos']" [queryParams]="{ id: item.id }">Editar</a>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div *ngIf="erros" >
+    {{ mensagemErro }}
+  </div>
+</div>

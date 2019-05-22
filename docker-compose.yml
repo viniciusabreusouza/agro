@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  note-loopback:
+    build: ./note-loopback
+    image: raymondfeng/note-loopback
+    ports:
+      - "50051:50051"
+      - "3000:3000"
+    links:
+      - note-java
+      - note-mongo
+      - zipkin
+    networks:
+      app-net:
+        aliases:
+          - note-loopback
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:
+
+

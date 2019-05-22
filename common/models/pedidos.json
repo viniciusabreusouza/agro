@@ -1,0 +1,37 @@
+{
+  "name": "Pedidos",
+  "plural": "Pedidos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "solicitante": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "quantidade":{
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "Em Análise"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "produtos": {
+      "type": "hasMany",
+      "model": "Pedidos",
+      "foreignKey": "produtoId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

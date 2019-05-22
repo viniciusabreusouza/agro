@@ -38,5 +38,9 @@
   "Produto": {
     "dataSource": "db",
     "public": true
+  },
+  "Pedidos": {
+    "dataSource": "db",
+    "public": true
   }
 }
