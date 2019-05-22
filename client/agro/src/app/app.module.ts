@@ -1,3 +1,4 @@
+import { ProdutosService } from './services/produtos/produtos.service';
 import { HomeGuard } from './services/auth/home.guard';
 import { LocalStorageService } from './services/local-storage.service';
 import { LoginService } from './services/login/login.service';
@@ -14,7 +15,10 @@ import { HomeComponent } from './home/home.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ProdutosComponent } from './produtos/produtos/produtos.component';
+import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
+import { AdicionarProdutoComponent } from './produtos/adicionar-produto/adicionar-produto.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +28,20 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HomeComponent,
     AppLayoutComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProdutosComponent,
+    DetalhesProdutoComponent,
+    AdicionarProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    AngularFontAwesomeModule
+    HttpClientModule
+    // AngularFontAwesomeModule
   ],
-  providers: [ LoginService, LocalStorageService, HomeGuard],
+  providers: [ LoginService, LocalStorageService, HomeGuard, ProdutosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
